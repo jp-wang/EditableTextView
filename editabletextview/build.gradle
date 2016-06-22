@@ -27,7 +27,7 @@ dependencies {
 publish {
     groupId = 'com.jp.ui'
     artifactId = rootProject.name
-    version = '1.0.5'
+    version = '1.0.6'
     description = 'A good widget which is used to show editable text view'
     website = "https://github.com/neiyo1987/${rootProject.name}"
 }

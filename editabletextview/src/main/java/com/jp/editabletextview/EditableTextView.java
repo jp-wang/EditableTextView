@@ -47,9 +47,9 @@ public class EditableTextView extends RelativeLayout implements EditableEditText
     private EditableTextViewListener listener;
 
     public interface EditableTextViewListener {
-        void onEditModeStart();
+        void onEditModeStart(View v);
 
-        void onEditModeFinish(String text);
+        void onEditModeFinish(View v, String text);
     }
 
     public EditableTextView(Context context) {
@@ -343,7 +343,7 @@ public class EditableTextView extends RelativeLayout implements EditableEditText
         isInEditMode = false;
 
         if (listener != null && notifyListener) {
-            listener.onEditModeFinish(ettEditText.getText().toString());
+            listener.onEditModeFinish(this, ettEditText.getText().toString());
         }
     }
 
@@ -369,7 +369,7 @@ public class EditableTextView extends RelativeLayout implements EditableEditText
         isInEditMode = true;
 
         if (listener != null && notifyListener)
-            listener.onEditModeStart();
+            listener.onEditModeStart(this);
     }
 
     /**
